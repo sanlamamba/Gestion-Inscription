@@ -1,0 +1,29 @@
+{
+  "name": "gestioninscription",
+  "version": "1.0.0",
+  "description": "main file of gestioninscription app with react and express server",
+  "main": "./inscriptionapp/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lamambaSan/Gestion-Inscription.git"
+  },
+  "keywords": [
+    "gestion",
+    "inscription",
+    "javascript",
+    "react",
+    "express"
+  ],
+  "bugs": {
+    "url": "https://github.com/lamambaSan/Gestion-Inscription/issues"
+  },
+  "homepage": "https://github.com/lamambaSan/Gestion-Inscription#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
