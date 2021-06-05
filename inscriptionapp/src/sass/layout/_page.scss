@@ -1,0 +1,17 @@
+@import "../base/reset";
+
+.App{
+     width: 100vw;
+     height: 100vh;
+     display: grid;
+     grid-template-rows: 75px 1fr;
+     background-color: $bg-color;
+     color: $inverse-bg;
+     .page{
+          padding: 2% 5%;
+          height: 100%;
+          overflow: hidden;
+        }
+
+}
+   

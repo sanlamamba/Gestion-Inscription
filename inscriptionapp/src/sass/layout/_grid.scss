@@ -1,0 +1,29 @@
+.grided{
+     display: grid;
+     
+     &.headers{
+          grid-template-columns: 300px 1fr;
+     }
+     &.formationGrid,&.newsGrid{
+          gap: 20px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 45% 45%;
+     }
+     &.twoCol, &.contactCont, &.aboutCont{
+          background-color: red;
+          gap:10px;
+          grid-template-columns: 1fr 1fr;
+     }
+     &.dashboard{
+          grid-template-columns: 1fr 2fr;
+          gap: 50px;
+     }
+     &.infoPanel{
+          grid-template-rows: 6fr 4fr 1fr
+     }
+     &.socialChild{
+          grid-template-columns: 75px 1fr;
+     }
+     
+}

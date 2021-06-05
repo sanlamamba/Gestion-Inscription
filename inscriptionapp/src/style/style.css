@@ -1,0 +1,24 @@
+.faqChild{
+     min-height: 50px;
+}
+.faqResponse{
+     padding: 20px;
+     
+
+}
+.faqQuestion{
+     display: grid;
+     grid-template-columns: 1fr 50px;
+}
+.faqQuestion > * {
+     padding:5px 2px
+}
+.faqResponse .close{
+     padding: 0px 5px;
+     margin: 5px;
+     color: red;
+     opacity: 0.4;
+}
+.faqResponse .close:hover{
+     display: none;
+}

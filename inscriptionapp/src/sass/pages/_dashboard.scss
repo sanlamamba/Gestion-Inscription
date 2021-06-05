@@ -1,0 +1,46 @@
+@import "../base/reset";
+.infoPanel, .information{
+     background-color: $card-color;
+     border-radius: 25px;
+     padding: 20px;
+}
+.newsGrid{
+     height: 100%;
+
+     .newsChild{
+          background-color: $inverse-bg;
+          color: $bg-color;
+          border-radius: 10px;
+          display: grid;
+          grid-template-rows: 1fr 50px;
+          min-height: 50px;
+          overflow: hidden;
+
+          .newsInfo{
+               padding: 5px 10px;
+               h2{
+                    font-size: inherit;
+               }
+          }
+
+          .newsImg{
+               background-color: $primary-color;
+          }
+     }
+     
+}
+.information{
+     .zoneTitle{
+          padding: 10px;
+     }
+     .zoneTitle::before{
+          content: " ";
+          background-color: $primary-color;
+          padding: 0px 5px 0px 0px;
+          max-height: 5px;
+          margin: 0px 10px 0px 0px;
+     }
+     .infoStudent{
+          padding: 20px;
+     }
+}

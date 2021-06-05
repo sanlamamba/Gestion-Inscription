@@ -1,0 +1,31 @@
+@import "../base/reset";
+
+.formationGrid{
+     height: 100%;
+
+     .formationChild{
+          background-color: $inverse-bg;
+          color: $bg-color;
+          border-radius: 20px;
+          display: grid;
+          grid-template-rows: 1fr 60px;
+          min-height: 50px;
+          overflow: hidden;
+
+          .formationInfo{
+               padding: 2px 10px;
+          }
+
+          .formationImg{
+               background-color: $primary-color;
+          }
+          .formationDetails{
+               padding: 0px 10px;
+               font-size: 14px;
+               display: flex;
+               list-style: none;
+               justify-content: space-between;
+          }
+     }
+     
+}

@@ -1,0 +1,24 @@
+.contact{
+     height: 100%;
+     padding: 20px;
+
+     .contactCont{
+          min-height: 60vh;
+
+          padding: 20px;
+
+
+          .socials{
+               .socialChild{
+                    min-height: 50px;
+                    margin-top: 10px;
+
+                    &>*{
+                         display: flex;
+                         align-items: center;
+                         padding: 5px;
+                    }
+               }
+          }
+     }
+}

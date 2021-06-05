@@ -1,0 +1,31 @@
+@import "../base/reset";
+
+.button{
+     min-width: 200px;
+     font-size: 18px;
+     margin: 20px;
+     padding: 10px;
+     border-radius: 10px;
+     color: $bg-color;
+     
+     &.primBtn{
+          border: none;
+          background-color: $primary-color;
+     }
+     &.secBtn{
+          color: $inverse-bg;
+          border: 2px solid $inverse-bg;
+          background-color: transparent;
+     }
+     &:hover{
+          background-color: $inverse-bg;
+          color: $bg-color;
+     }
+}
+input:not([type="checkbox"]), .inputStyle{
+     min-height: 50px;
+     padding: 10px;
+     border-radius: 20px;
+     border: none;
+     margin: 5px;
+}

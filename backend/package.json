@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend of inscriptionapp, in the same repository but different folder to init database and tables",
+  "main": "startServer.js",
+  "scripts": {
+    "start": "nodemon startServer.js"
+  },
+  "keywords": [
+    "backend",
+    "express",
+    "node",
+    "server"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}
