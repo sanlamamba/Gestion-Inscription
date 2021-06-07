@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -18,6 +19,13 @@ a {
 /* Colors */
 /* Typography */
 /* Fonts */
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid black;
+  transition: 0.3s;
+}
 
 a {
   color: inherit;
@@ -67,7 +75,7 @@ input:not([type=checkbox]), .inputStyle {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 45% 45%;
 }
-.grided.twoCol, .grided.contactCont, .grided.aboutCont {
+.grided.twoCol, .grided.generalCont {
   gap: 10px;
   grid-template-columns: 1fr 1fr;
 }
@@ -227,11 +235,46 @@ a {
   text-align: center;
 }
 .faq > .faqTitle h6 {
+  padding: 20px 0px;
   opacity: 0.6;
 }
+.faq > .faqCont .faqChild {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.faq > .faqCont .faqChild::after {
+  content: "+";
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+.faq > .faqCont .faqChild:hover {
+  background-color: #ccc;
+}
+.faq > .faqCont .faqChild.active {
+  background-color: #ccc;
+}
+.faq > .faqCont .faqChild.active:after {
+  content: "x";
+}
+.faq > .faqCont .faqResponse {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  border-bottom: #777;
+}
 
-
-/*CONTACT*/
 .contact {
   height: 100%;
   padding: 20px;

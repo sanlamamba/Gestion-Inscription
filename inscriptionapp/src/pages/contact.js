@@ -1,10 +1,10 @@
 
-function ContactPage(){
+function AboutPage(){
 	
 	return (
 		<div className="page contact">
                <h2>Nous contacter</h2>
-               <div className="grided contactCont">
+               <div className="grided generalCont">
                     <div className="maps">
                          <h3>Retrouvez nous sur la carte:</h3>
                     </div>
@@ -23,4 +23,4 @@ function ContactPage(){
 	)
 }
 
-export default ContactPage
+export default AboutPage

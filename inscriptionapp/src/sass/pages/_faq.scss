@@ -2,14 +2,59 @@
      &> .faqTitle{
           text-align: center;
           h6{
+               padding: 20px 0px;
                opacity: 0.6;
           }
      }
-     .faqCont{
-          
-          .faqChild{
-               
+     &> .faqCont{
+
+          .faqChild {
+               background-color: #eee;
+               color: #444;
+               cursor: pointer;
+               padding: 18px;
+               width: 100%;
+               text-align: left;
+               border: none;
+               outline: none;
+               transition: 0.4s;
+
+               &::after{
+                    content: '+';
+                    font-size: 13px;
+                    color: #777;
+                    float: right;
+                    margin-left: 5px;
+               }
+               &:hover{
+                    background-color: #ccc;
+
+               }
+               &.active{
+                    background-color: #ccc;
+
+                    &:after{
+                         content: "x"; 
+                    }
+               }
           }
-          
+             
+
+          .faqResponse {
+               padding: 0 18px;
+               background-color: white;
+               display: none;
+               overflow: hidden;
+               max-height: 0;
+               transition: max-height 0.2s ease-out;
+               border-bottom: #777;
+          }
+             
+             
+             
+             
+
+
      }
 }
+          

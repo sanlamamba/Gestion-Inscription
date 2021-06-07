@@ -11,6 +11,8 @@ function HomePage(){
                          <a href="./portal/signup"><button className="button primBtn">s'inscire</button></a>
                          <a href="./formation"><button className="button secBtn">En savoir plus</button></a>
                     </div>
+                   
+
                </div>
           </div>
 	)

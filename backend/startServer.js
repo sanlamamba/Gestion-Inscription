@@ -96,14 +96,26 @@ app.get("/addadmin/:nom/:mail/:adresse/:tel/:specialite/:fonction/:role/:passwor
      })
 })
 app.get("/addetudiant/:nom/:sexe/:date/:mail/:mdp/:anneeC/:filiere",(req,res)=>{
-     const accessT = "ASDSD"
+
+     function generateString() {
+          const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+          let result = ' ';
+          const charactersLength = characters.length;
+          for ( let i = 0; i < 8; i++ ) {
+               result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          }
+
+          return result;
+     }
+     const accessT = generateString()
+
      const user ={
           nom:`${req.params.nom}`,
           sexe : `${req.params.sexe}`,
           date_naissance : `${req.params.date}`,
           mail : `${req.params.mail}`,
           password : `${req.params.mdp}`,
-          status : `${accessT}`,
+          access_token : `${accessT}`,
           annee_inscription : `${req.params.anneeC}`,
           filiere_choisi : `${req.params.filiere}`,
      }
@@ -111,7 +123,7 @@ app.get("/addetudiant/:nom/:sexe/:date/:mail/:mdp/:anneeC/:filiere",(req,res)=>{
      db.query(sqlQuery, user, (err, result)=>{
           if(err) throw err;
           console.log(result);
-          res.send({express:"Success...."})
+          res.send({created:true,token:accessT})
      })
 })
 
@@ -171,7 +183,7 @@ app.get("/authenticate/etudiant/:token",(req,res)=>{
 
 app.get("/authenticate/admin/:token",(req,res)=>{
      
-     const sqlQuery = `SELECT * FROM ${req.params.role} WHERE access_token ='${req.params.token}'`;
+     const sqlQuery = `SELECT * FROM admin WHERE access_token ='${req.params.token}'`;
      db.query(sqlQuery,(err, result)=>{
           if(err) throw err;
           console.log(result.length);

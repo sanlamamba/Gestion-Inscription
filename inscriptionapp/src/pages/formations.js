@@ -29,7 +29,7 @@ class FormationPage extends Component{
           formationP = formationP[0]
           {for(let i in formationP){
                console.log();
-               const formationChild = [formationP[i]['nom'],formationP[i]['duree'],formationP[i]['img'],formationP[i]['date_debut']];
+               const formationChild = [formationP[i]['nom_filiere_TB'],formationP[i]['duree_filiere_TB'],formationP[i]['img_filiere_TB'],formationP[i]['date_debut_filiere_TB']];
                foramtionArr.push(formationChild);
           }}
        return (

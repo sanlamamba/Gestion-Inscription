@@ -2,24 +2,18 @@
 function AboutPage(){
 	
 	return (
-		<div className="page about">
-               <div className="aboutTitle">
-                    <h1>
-                         Qui sommes nous?
-                    </h1>
-                    <div classNamte="grided aboutCont">
-
-                         <div className="aboutPic">
-                              Sdad
-                         </div>
+		<div className="page contact">
+               <h2>Nous contacter</h2>
+               <div className="grided generalCont">
+                    <div className="aboutImg">
+                         <h3>Retrouvez nous sur la carte:</h3>
+                    </div>
+                    <div className="socials">
                          
-                         <div className="aboutInfo">
-                              <p>
-                                   Nous sommes
-                              </p>
-                         </div>
+                         
                     </div>
                </div>
+               
           </div>
 	)
 }

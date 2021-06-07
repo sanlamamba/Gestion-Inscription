@@ -1,5 +1,5 @@
 import './style/main.css';
-import './style/style.css';
+// import './style/style.css';
 import {Route, Switch} from "react-router-dom";
 
 import Header from "./components/header"
@@ -18,6 +18,7 @@ import {LoginPage,SignUppage} from "./pages/portal/authenticate"
 // import Dashboard from "./pages/portal/dashboard"
 import { Component } from 'react';
 import DashboardEtudiant from './pages/portal/dashboardEtudiant';
+import DashboardAdmin from './pages/portal/dashboardAdmin';
 
 class App extends Component{
 
@@ -40,6 +41,7 @@ class App extends Component{
           <Route exact path="/portal/signup" component={SignUppage}></Route>
           <Route exact path="/portal/login" component={LoginPage}></Route>
           <Route exact path="/portal/dashboard/etudiant" component={DashboardEtudiant}></Route>
+          <Route exact path="/portal/dashboard/admin" component={DashboardAdmin}></Route>
 
           
         </Switch>

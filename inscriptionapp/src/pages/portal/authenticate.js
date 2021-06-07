@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import formation from "../../components/formation"
 
 class LoginPage extends Component{
 
@@ -76,7 +75,7 @@ class LoginPage extends Component{
                                    <select id="roleSelect">
                                         <option value="connect">Connection entant que:</option>
                                         <option value="etudiant">Etudiant</option>
-                                        <option value="users">Administrateur</option>
+                                        <option value="admin">Administrateur</option>
                                    </select>
                                    <label>
                                         <input className="rememberCheck" type="checkbox"/>
@@ -99,43 +98,6 @@ class LoginPage extends Component{
        
      }
 }
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class SignUppage extends Component{
 
@@ -143,68 +105,53 @@ class SignUppage extends Component{
        user : "",
        formation:""
      }
-     invalidContent=(inputOne,inputTwo)=>{    
-          inputOne.style.border = "2px solid red"
-          inputTwo.style.border = "2px solid red"
-     }
-     validContent=(inputOne,inputTwo)=>{    
-          inputOne.style.border = "1px solid grey"
-          inputTwo.style.border = "1px solid grey"
-     }
-     getData = async(mail,password,table = true) =>{
-          let response;
-          if(table){
-               response = await fetch(`/showetudiant/${mail}/${password}`);
-          }else{
-               response = await fetch(`/showusers/${mail}/${password}`);
-          }
-       const body = await response.json();
-       if(body) return true
-       
-       if(!body){
-          this.getData(mail,password,false)
-       }
-       return body
-     }
-     getformation= async() =>{
-          const response = await fetch("/showformation");
+     
+     addEtudiant= async(nom,sexe,date,mail,mdp,anneeC,filiere) =>{
+          const response = await fetch(`/addetudiant/${nom}/${sexe}/${date}/${mail}/${mdp}/${anneeC}/${filiere}`);
           const body = await response.json();
           if (response.status !=200) throw Error(body.message);
           return body;
         }
-     componentDidMount() {
-          this.getformation()
-               .then(res=>{
-               const data = res;
-               this.setState({formation: data});
-          })
 
-     }
       
      signup=(e)=>{
           e.preventDefault();
+          const nomTxt = document.getElementById("nomTxt")
           const emailTxt = document.getElementById("emailTxt")
-          const nameTxt = document.getElementById("emailTxt")
+          const sexeTxt = document.getElementById("sexeTxt")
+          const dateTxt = document.getElementById("dateTxt")
           const passwordTxt = document.getElementById("passwordTxt")
+          const anneeTxt = document.getElementById("anneeTxt")
+          const filiereTxt = document.getElementById("filiereTxt")
           /*HANDLING EMAIL ERRORS*/
-          if(emailTxt.textLength == 0 || passwordTxt.textLength ==0){
-               this.invalidContent(emailTxt,passwordTxt)
+          if(emailTxt.textLength == 0 || dateTxt.textLength ==0 || passwordTxt.textLength ==0 || sexeTxt.value == "null" || anneeTxt.textLength == 0 || filiereTxt.value == "null"){
+               alert("CHIPEUR")
           }else{
-               this.getData(emailTxt.value,passwordTxt.value)
+               this.addEtudiant(nomTxt.value,sexeTxt.value, dateTxt.value,emailTxt.value,passwordTxt.value,anneeTxt.value,filiereTxt.value)
                     .then(res=>{
-                         if(!res){
-                              this.invalidContent(emailTxt,passwordTxt);
-                              setTimeout(this.validContent,3000,emailTxt,passwordTxt)
-                         }else{
-                              // alert(res)
-                              sessionStorage.setItem("user",`${emailTxt.value}`)
-                              window.location.assign("dashboard")
-                         }
+                         console.log(res["token"])
+                         sessionStorage.setItem("token",`${res["token"]}`)
+                         sessionStorage.setItem("user",`${emailTxt.value}`)
+                         sessionStorage.setItem("role","etudiant")
+                         window.location.assign(`dashboard/etudiant`)
                     })
                     
           }
           
      }
+     getData = async() =>{
+          const response = await fetch("/showformation");
+          const body = await response.json();
+          if (response.status !=200) throw Error(body.message);
+          return body;
+     }
+     componentDidMount() {
+     this.getData()
+          .then(res=>{
+          const data = res;
+          this.setState({formation: data});
+          })
+     }   
 
      render(){
           let formationArr= [];
@@ -230,22 +177,19 @@ class SignUppage extends Component{
      
                               </span>
                               <span className="formInputs signup">
-                                   <input id="nom" required type="text" placeholder="Nom et prenom"/>
-                                   <input id="email" required type="email" placeholder="email"/>
+                                   <input id="nomTxt" required type="text" placeholder="Nom et prenom"/>
+                                   <input id="emailTxt" required type="email" placeholder="email"/>
+                                        <input id="passwordTxt" required type="password" placeholder="saisir un mot de passe"/>
                                    <span className="grided twoCol">
-                                        <input id="mdp" required type="password" placeholder="saisir un mot de passe"/>
-                                        <input id="reqMdp" required type="password" placeholder="confirmer votre mot de passe"/>
-                                   </span>
-                                   <span className="grided twoCol">
-                                        <input id="birthdate" required type="date" placeholder="date de naissance"/>
-                                        <select id='sexe' required className="inputStyle">
+                                        <input id="dateTxt" required type="text" placeholder="date de naissance: jj-mm-aaaa"/>
+                                        <select id='sexeTxt' required className="inputStyle">
                                              <option value="null">Sexe:</option>
                                              <option value="homme">Homme</option>
                                              <option value="femme">Femme</option>
                                         </select>
                                    </span>
-                                   <select id="filiere" required className="inputStyle">
-                                        <option>Choisir votre filiere:</option>
+                                   <select id="filiereTxt" required className="inputStyle">
+                                        <option value="null">Choisir votre filiere:</option>
                                         {formationArr.map(formatChild=>{
                                              return(
                                                   <option value={formatChild["0"]}>{formatChild["0"]}</option>
@@ -253,13 +197,13 @@ class SignUppage extends Component{
                                              
                                         })}
                                    </select>
-                                   <select required className="inputStyle">
+                                   <select id="anneeTxt" required className="inputStyle">
                                         <option value="null">Annee Inscription</option>
-                                        <option>L1</option>
-                                        <option>L2</option>
-                                        <option>L3</option>
-                                        <option>M1</option>
-                                        <option>M2</option>
+                                        <option value="L1">L1</option>
+                                        <option value="L2">L2</option>
+                                        <option value="L3">L3</option>
+                                        <option value="M1">M1</option>
+                                        <option value="M2">M2</option>
                                    </select>
                                       
                                    
@@ -271,7 +215,7 @@ class SignUppage extends Component{
      
                               </span>
                               <span className="formSubmit">
-                                   <input type="submit" value="s'inscrire" className="button primBtn" />
+                              <input onClick={this.signup} type="submit" value="connection" className="button primBtn" />
      
                               </span>
                               
@@ -284,81 +228,5 @@ class SignUppage extends Component{
      }
 }
    
-
-
-// function SignUppage(){
-	
-// 	return (
-// 		<div className="page signup authenticate">
-//                <div className="offset"></div>
-//                <div className="authenticate-form">
-//                     <form>
-//                          <span className="formText">
-//                               <h2>
-//                                    Inscription
-//                               </h2>
-//                               <p>
-//                                    Debutez votre voyage numerique <br></br>un monde plein d'adventure !
-//                               </p>
-
-//                          </span>
-//                          <span className="formInputs signup">
-//                               <input type="text" placeholder="Nom et prenom"/>
-//                               <input type="email" placeholder="email"/>
-//                               <span className="grided twoCol">
-//                                    <input type="date" placeholder="date de naissance"/>
-//                                    <select className="inputStyle">
-//                                         <option>Sexe:</option>
-//                                         <option>Homme</option>
-//                                         <option>Femme</option>
-//                                    </select>
-//                               </span>
-//                               <select className="inputStyle">
-//                                    <option>Choisir votre filiere:</option>
-//                                    {formation.map(formatChild=>{
-//                                         return(
-//                                              <option>{formatChild.nom}</option>
-//                                         )
-                                        
-//                                    })}
-//                               </select>
-//                               <span className="grided twoCol">
-//                                    <select className="inputStyle">
-//                                         <option>Annee Inscription</option>
-//                                         <option>License 1</option>
-//                                         <option>License 2</option>
-//                                         <option>License 3</option>
-//                                         <option>Master I</option>
-//                                         <option>Master II</option>
-//                                    </select>
-//                                    <select className="inputStyle">
-//                                         <option>Situation Matrimonial</option>
-//                                         <option>Celibataire</option>
-//                                         <option>Marie</option>
-//                                         <option>Divorce</option>
-//                                         <option>C'est complique</option>
-//                                    </select>
-                                   
-//                               </span>
-                              
-//                               <label>
-//                                    <input className="rememberCheck" type="checkbox"/>
-//                                    &nbsp;Vous accepter tous nos termes d'utilisation
-
-//                               </label>
-
-//                          </span>
-//                          <span className="formSubmit">
-//                               <input type="submit" value="s'inscrire" className="button primBtn" />
-
-//                          </span>
-                         
-//                     </form>
-//                </div>
-               
-//           </div>
-// 	)
-// }
-
 export {LoginPage, SignUppage}
 
