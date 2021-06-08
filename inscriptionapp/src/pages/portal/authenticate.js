@@ -43,6 +43,7 @@ class LoginPage extends Component{
                                    setTimeout(this.validContent,3000,emailTxt,passwordTxt,roleTxt)
                               }else{
                                    const access_token = res[0]["access_token"]
+                                   console.log(access_token)
                                    sessionStorage.setItem("token",`${access_token}`)
                                    sessionStorage.setItem("user",`${emailTxt.value}`)
                                    sessionStorage.setItem("role",`${roleTxt.value}`)
@@ -72,7 +73,7 @@ class LoginPage extends Component{
                               <span className="formInputs login">
                                    <input id="emailTxt" type="email" placeholder="Email"/>
                                    <input id="passwordTxt" type="password" placeholder="mot de passe"/>
-                                   <select id="roleSelect">
+                                   <select className='inputStyle' id="roleSelect">
                                         <option value="connect">Connection entant que:</option>
                                         <option value="etudiant">Etudiant</option>
                                         <option value="admin">Administrateur</option>
@@ -169,7 +170,7 @@ class SignUppage extends Component{
                <div className="page signup authenticate">
                     <div className="offset"></div>
                     <div className="authenticate-form">
-                         <form>
+                         <form id='signUpForm'>
                               <span className="formText">
                                    <h2>
                                         Inscription

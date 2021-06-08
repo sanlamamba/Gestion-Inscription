@@ -16,6 +16,9 @@ class DashboardEtudiant extends Component{
 		return body[0];
 		
 	   }
+	   getSignUp = async()=>{
+		   
+	   }
 	   deconnection = ()=>{
 		sessionStorage.clear()
 	   }

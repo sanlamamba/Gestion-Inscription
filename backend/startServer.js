@@ -147,6 +147,16 @@ app.get("/showformation",(req,res)=>{
           res.send(result)
      })
 })
+app.get("/showInscription",(req,res)=>{
+
+     const sqlQuery = "SELECT * FROM etudiant WHERE ";
+     db.query(sqlQuery,(err, result)=>{
+          if(err) throw err;
+          console.log(result);
+          res.send(result)
+     })
+})
+
 
 app.get("/showadmin/:mail/:password",(req,res)=>{
      

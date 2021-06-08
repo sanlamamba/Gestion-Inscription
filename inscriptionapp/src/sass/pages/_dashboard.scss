@@ -44,3 +44,23 @@
           padding: 20px;
      }
 }
+.infoPanel{
+     .disconnectCta{
+          .deconnexion{
+               color: #e94b3c;
+          }
+     }
+     .infoImg{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .userImg{
+               height: 17vw;
+               width: 17vw;
+               background-image: url('./../user.jpg');
+               background-position: center;
+               background-size: cover;
+               border-radius: 50%;
+          }
+     }
+}

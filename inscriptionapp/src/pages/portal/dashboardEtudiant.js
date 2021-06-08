@@ -25,19 +25,21 @@ class DashboardEtudiant extends Component{
 	   }
 	   deconnection = ()=>{
 		sessionStorage.clear()
+			window.location.assign("/portal/login")
 	   }
 	   componentDidMount() {
-		if(sessionStorage.getItem("role") != "etudiant"){
-			window.location.assign("/connection");
-		}
+		if(sessionStorage.getItem("role") != "etudiant") window.location.assign("/portal/login");
+		
 		this.getData()
-		  .then(res=>{
-		    const data = res;
-		//     console.log(data)
-		    this.setState({user:data})
-		  })
+			.then(res=>{
+		    		const data = res;
+				//     console.log(data)
+		    		this.setState({user:data})
+		  	})
+		}
+		
 	 
-	   }
+	
 	 
 	   
    
@@ -55,11 +57,12 @@ class DashboardEtudiant extends Component{
 				)
 			}else{
 				return(
-					<h1>World</h1>
+					<p></p>
 				)
 			}
 		}
 		const MessageUser =(props)=>{
+			console.log(props.status)
 			if(props.status == 'inscrit'){
 				return(
 					<div className="infoStudent">
@@ -69,11 +72,22 @@ class DashboardEtudiant extends Component{
 						<h6>PS:Vous receverez par mail une liste de dossier a fournir pour completer votre dossier, merci beaucoup!</h6>     
 					</div>
 				)
+			}else if(props.status == "attente"){
+				return(
+					<div className="infoStudent">
+						<h4>Felicitation! Votre dossier a ete pris en compte, vous allez recevoir un matricule (SIDK - XXXXX) si votre dossier est valider et vous integrez un groupe de  {user["filiere_choisi"]} !</h4>
+						<h4>Veuillez vous rapprocher de l'administration pour tout besoin ou question, afin d'eviter tout desagrement !</h4>
+						<h6>PS:Vous receverez par mail une liste de dossier a fournir pour completer votre dossier, merci beaucoup!</h6>     
+					
+						
+					</div>
+				)
 			}else{
 				return(
 					<div className="infoStudent">
-							
-						<h4>Felicitation! Votre inscription fut valider, vous avez recu le matricule : SIDK5984 et vous integrez le groupe : PR631 ! Les cours debuterons le 24/09/2021</h4>
+						<h4>Felicitation! Votre dossier a ete pris en compte, vous allez recevoir un matricule (SIDK - XXXXX) et vous integrez un groupe : {user["initial"]}{user["id_groupe"]} ! Les cours debuterons le {user["date_debut_filiere_TB"]}</h4>
+					
+						
 					</div>
 				)
 			}
@@ -82,29 +96,29 @@ class DashboardEtudiant extends Component{
 			<div className="page grided dashboard">
 				<aside className="grided infoPanel">
 					<div className="infoImg">
+						<div className="userImg">
+
+						</div>
 					</div>
 					<div className="infoPerson">
 						<h2>{user.nom}</h2>
 						<UsefulInfo status={user["status"]} />
+						<h4>{user["mail"]}</h4>
+						<h4>{user["filiere_choisi"]}</h4>
 						<h4>{user["annee_inscription"]}</h4>
 						<h4> status : {user["status"]}</h4>
 
 
 					</div>
 					<div className="disconnectCta">
-						<a href="#" >Deconnexion</a>
+						<a href="#" className='deconnexion' onClick={this.deconnection} >Deconnexion</a>
 					</div>
 				</aside>
 				<div className="grided information">
 					<div className="usefulInfo">
 						<div className="zoneTitle">Vos nouvelles</div>
 						<MessageUser status={user["status"]} />
-						{/* <div className="infoStudent">
-							
-							<h4>Felicitation! Votre inscription fut valider, vous avez recu le matricule : SIDK5984 et vous integrez le groupe : PR631 ! Les cours debuterons le 24/09/2021</h4>
-							<h4>Veuillez vous rapprocher de l'administration pour tout besoin ou question, afin d'eviter tout desagrement !</h4>
-							<h6>PS:Vous receverez par mail une liste de dossier a fournir pour completer votre dossier, merci beaucoup!</h6>     
-						</div> */}
+						
 					</div>
 					<div className="contentFiller">
 						<div className="zoneTitle">Les news :</div>

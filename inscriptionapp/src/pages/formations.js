@@ -43,18 +43,18 @@ class FormationPage extends Component{
                          foramtionArr.map((formationItem)=>{
                               return(
                                    <div className="formationChild grided">
-                                                                           {console.log(formationItem)}
+                                      {console.log(formationItem)}
 
-                                        <div className="formationImg">
+                                      <div className="formationImg">
 
-                                        </div>
-                                        <div  className="formationInfo">
-                                             <h2>{formationItem['0']}</h2>
-                                             <ul className="formationDetails">
-                                                  <li>Duree: {formationItem[1]}</li>
-                                                  <li key={formationItem.date}>date de debut: {formationItem[3]}</li>
-                                             </ul>
-                                        </div>
+                                      </div>
+                                      <div  className="formationInfo">
+                                            <h2>{formationItem['0']}</h2>
+                                            <ul className="formationDetails">
+                                                <li>Duree: {formationItem[1]}</li>
+                                                <li key={formationItem.date}>date de debut: {formationItem[3]}</li>
+                                            </ul>
+                                      </div>
 
                                    </div>
                               )

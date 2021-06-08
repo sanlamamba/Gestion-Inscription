@@ -5,7 +5,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -23,7 +22,6 @@ a {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -69,7 +67,7 @@ input:not([type=checkbox]), .inputStyle {
 .grided.headers {
   grid-template-columns: 300px 1fr;
 }
-.grided.formationGrid, .grided.newsGrid {
+.grided.formationGrid, .grided.newsGrid, .grided.specs {
   gap: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -88,6 +86,35 @@ input:not([type=checkbox]), .inputStyle {
 }
 .grided.socialChild {
   grid-template-columns: 75px 1fr;
+}
+.grided.aboutCont {
+  gap: 5px;
+  grid-template-rows: 3fr 2fr;
+  height: 95%;
+}
+.grided.partnerGrid {
+  height: 85%;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.grided.aboutInfo {
+  grid-template-rows: 5fr 2fr;
+}
+.grided.specs {
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+.grided.iconCont {
+  grid-template-rows: 1fr 25px;
+}
+
+#signUpForm {
+  grid-template-rows: 50px 1fr 50px;
+}
+#signUpForm *:nth-child(2) {
+  padding: 10px 0px;
 }
 
 .cta-connection {
@@ -108,7 +135,6 @@ input:not([type=checkbox]), .inputStyle {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -147,7 +173,6 @@ header .menuZone ul li:hover {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -190,7 +215,6 @@ a {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -226,9 +250,35 @@ a {
   justify-content: space-between;
 }
 
-.aboutCont {
-  display: grid;
-  grid-template-columns: 500px 1fr;
+.aboutCont .mainInfo .aboutInfo h5 {
+  display: flex;
+  padding: 0px 20px;
+  align-items: flex-end;
+}
+.aboutCont .mainInfo .aboutInfo .aboutCta {
+  display: flex;
+  transform: scale(0.7);
+}
+.aboutCont .partners .partnerGrid .partnerImg {
+  border-radius: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.aboutCont .partners .partnerGrid .cisco {
+  background-image: url("../cisco.jpg");
+}
+.aboutCont .partners .partnerGrid .google {
+  background-image: url("../google.jpg");
+}
+.aboutCont .partners .partnerGrid .bluray {
+  background-image: url("../bluray.png");
+}
+.aboutCont .partners .partnerGrid .sony {
+  background-image: url("../sony.png");
+}
+.aboutCont .partners .partnerGrid .qualcom {
+  background-image: url("../qualcom.png");
 }
 
 .faq > .faqTitle {
@@ -300,7 +350,6 @@ a {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -349,7 +398,6 @@ a {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -399,6 +447,23 @@ a {
 }
 .information .infoStudent {
   padding: 20px;
+}
+
+.infoPanel .disconnectCta .deconnexion {
+  color: #e94b3c;
+}
+.infoPanel .infoImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infoPanel .infoImg .userImg {
+  height: 17vw;
+  width: 17vw;
+  background-image: url("./../user.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
 }
 
 /* PLACEHOLDERS AND CLASSES */

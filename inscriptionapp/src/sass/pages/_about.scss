@@ -1,4 +1,42 @@
 .aboutCont{
-     display: grid;
-     grid-template-columns: 500px 1fr;
+     .mainInfo{
+
+          .aboutInfo{
+               h5{
+                    display: flex;
+                    padding: 0px 20px;
+                    align-items: flex-end;
+               }
+               .aboutCta{
+                    display: flex;
+                    transform: scale(0.7);
+               }
+          }
+     }
+     .partners{
+          .partnerGrid{
+               .partnerImg{
+                    border-radius: 5px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+               }
+               .cisco{
+                    background-image: url('../cisco.jpg');
+               }
+               .google{
+                    background-image: url('../google.jpg');
+               }
+               .bluray{
+                    background-image: url('../bluray.png');
+               }
+               .sony{
+                    background-image: url('../sony.png');
+               }
+               .qualcom{
+                    background-image: url('../qualcom.png');
+               }
+               
+          }
+     }
 }

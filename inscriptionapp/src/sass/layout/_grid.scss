@@ -4,7 +4,7 @@
      &.headers{
           grid-template-columns: 300px 1fr;
      }
-     &.formationGrid,&.newsGrid{
+     &.formationGrid,&.newsGrid,&.specs{
           gap: 20px;
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
@@ -24,6 +24,33 @@
      &.socialChild{
           grid-template-columns: 75px 1fr;
      }
-
-     
+     &.aboutCont{
+          gap:5px;
+          grid-template-rows: 3fr 2fr;
+          height: 95%;
+     }
+     &.partnerGrid{
+          height: 85%;
+          gap:10px;
+          display: grid;
+          grid-template-columns: 1fr  1fr 1fr 1fr 1fr;
+          grid-template-rows: 1fr;
+     }
+     &.aboutInfo{
+          grid-template-rows: 5fr 2fr;
+     } 
+     &.specs{
+          grid-template-rows: 1fr;
+          gap:10px
+     }
+     &.iconCont{
+          grid-template-rows: 1fr 25px;
+          
+     }    
+}
+#signUpForm{
+     grid-template-rows: 50px 1fr 50px;
+     *:nth-child(2){
+          padding: 10px 0px;
+     }
 }
