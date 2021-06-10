@@ -149,13 +149,32 @@ app.get("/showformation",(req,res)=>{
 })
 app.get("/showInscription",(req,res)=>{
 
-     const sqlQuery = "SELECT * FROM etudiant WHERE ";
+     const sqlQuery = "SELECT * FROM etudiant LEFT JOIN filiere ON etudiant.filiere_choisi = filiere.nom_filiere_TB LEFT JOIN groupe ON filiere.id_filiere_TB = groupe.id_filiere WHERE etudiant.status = 'attente' ";
      db.query(sqlQuery,(err, result)=>{
           if(err) throw err;
           console.log(result);
           res.send(result)
      })
 })
+app.get("/makeInscrit/:matricule/:groupe/:etudiant",(req,res)=>{
+
+     const sqlQuery = `UPDATE etudiant SET status='inscrit', matricule = ${req.params.matricule}, id_groupe = ${req.params.groupe} WHERE etudiant.id_etudiant = ${req.params.etudiant} `
+     db.query(sqlQuery,(err, result)=>{
+          if(err) throw err;
+          console.log(result);
+          res.send(result)
+     })
+})
+app.get("/makeRejecter/:etudiant",(req,res)=>{
+
+     const sqlQuery = `UPDATE etudiant SET status = 'rejeter' WHERE etudiant.id_etudiant = ${req.params.etudiant};  `
+     db.query(sqlQuery,(err, result)=>{
+          if(err) throw err;
+          console.log(result);
+          res.send(result)
+     })
+})
+
 
 
 app.get("/showadmin/:mail/:password",(req,res)=>{

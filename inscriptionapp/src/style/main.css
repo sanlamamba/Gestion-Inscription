@@ -435,6 +435,9 @@ a {
   background-color: #647DEE;
 }
 
+.information {
+  overflow: hidden;
+}
 .information .zoneTitle {
   padding: 10px;
 }
@@ -447,6 +450,54 @@ a {
 }
 .information .infoStudent {
   padding: 20px;
+}
+.information .usefulInfo {
+  overflow-y: scroll;
+}
+.information .enAttente {
+  border: 1px solid #909090;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 2px;
+}
+.information .enAttente > * {
+  padding: 2px 0px;
+}
+.information .enAttente .guiAdmin {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.information .enAttente .guiAdmin span {
+  display: flex;
+  flex-direction: column;
+}
+.information .enAttente .guiAdmin span label {
+  transform: scale(0.8);
+  color: #00000070;
+}
+.information .enAttente .guiAdmin span input {
+  min-height: max-content;
+  border-radius: 0px;
+  background: #ffffff50;
+  border-bottom: 1px solid #909090;
+}
+.information .enAttente .guiAdmin button {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #00000070;
+  color: white;
+}
+.information .enAttente .guiAdmin button.reject {
+  color: #fa5050;
+  border-color: #fa5050;
+}
+.information .enAttente .guiAdmin button.accept {
+  background: #209020;
+}
+.information .enAttente .guiAdmin button:hover {
+  background: black;
+  color: white;
 }
 
 .infoPanel .disconnectCta .deconnexion {
