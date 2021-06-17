@@ -1,10 +1,11 @@
+import {Link} from 'react-router-dom'
 
 function CtaCon(menuDisplay, ctaDisplay,links){
 	
 	return (
 		<ul className="cta-connection">
-               <a href="http://localhost:3000/portal/login">connection</a>
-               <a href="http://localhost:3000/portal/signup">signup</a>
+               <Link to="/portal/login">connection</Link>
+               <Link to="/portal/signup">signup</Link>
 
           </ul>
 	)

@@ -1,3 +1,4 @@
+import main from './../main.png'
 
 function HomePage(){
 	
@@ -11,9 +12,8 @@ function HomePage(){
                          <a href="./portal/signup"><button className="button primBtn">s'inscire</button></a>
                          <a href="./formation"><button className="button secBtn">En savoir plus</button></a>
                     </div>
-                   
-
                </div>
+               <img src ={main} width='100%' className='imageCont'/>
           </div>
 	)
 }

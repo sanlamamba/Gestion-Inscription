@@ -5,5 +5,4 @@ const db = mysql.createConnection({
      password:"",
      database:"gestioninscription"
 })
-
-module.exports = db;
+export default db

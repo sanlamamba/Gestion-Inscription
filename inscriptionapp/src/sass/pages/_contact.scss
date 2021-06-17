@@ -6,7 +6,17 @@
           min-height: 60vh;
 
           padding: 20px;
+          .mapsCont{
+               display: grid;
+               grid-template-rows: 50px 1fr;
 
+               .maps{
+                    background-image: url('./../maps.jpg');
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+               }
+          }
 
           .socials{
                .socialChild{
