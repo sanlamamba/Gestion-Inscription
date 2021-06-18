@@ -25,8 +25,8 @@ l'administrateur peut confirmer et rejeter les dossiers des étudiants, tandis q
 
 
 #### Lire plus en telechargeant notre documentation technique:
-[GUIDE UTILISATEUR.PDF]()
+[DOCUMENTATION TECHNIQUE.pdf](https://github.com/slamamba/Gestion-Inscription/files/6677579/DOCUMENTATION.TECHNIQUE.pdf)
 
 
 #### Lire plus en telechargeant notre guide utilisateur:
-[GUIDE UTILISATEUR]()
+[GUIDE UTILISATEUR.pdf](https://github.com/slamamba/Gestion-Inscription/files/6677576/GUIDE.UTILISATEUR.pdf)
