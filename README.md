@@ -1,5 +1,5 @@
 # Gestion-Inscription
-##### SAN LAMAMBA POPODA - PR215 =
+##### SAN LAMAMBA POPODA - PR215
 ##### NDORO ALPHONSE GERAUD - PR215
 Projet Javascript/React
 
@@ -25,4 +25,8 @@ l'administrateur peut confirmer et rejeter les dossiers des étudiants, tandis q
 
 
 #### Lire plus en telechargeant notre documentation technique:
-[Uploading PROJET FINAL JAVASCRIPT PR215.pdf…]()
+[GUIDE UTILISATEUR.PDF]()
+
+
+#### Lire plus en telechargeant notre guide utilisateur:
+[GUIDE UTILISATEUR]()
