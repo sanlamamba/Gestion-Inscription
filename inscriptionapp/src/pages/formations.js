@@ -16,9 +16,12 @@ class FormationPage extends Component{
        this.getData()
          .then(res=>{
            const data = res;
+           const formaGrid = document.getElementById('formaGrid');
+           formaGrid.innerHTML =''
+
            this.setState({formation: data});
          })
-   
+         
      }
    
      render(){
@@ -35,8 +38,8 @@ class FormationPage extends Component{
        return (
 		<div className="page formation">
                <h1>Nos formations</h1>
-               <div className="grided formationGrid">
-                    
+               <div id='formaGrid' className="grided formationGrid">
+                    <h1>Chargement....</h1>
                     {console.log(foramtionArr)}
                     
                     {
@@ -45,7 +48,7 @@ class FormationPage extends Component{
                                    <div className="formationChild grided">
                                       {console.log(formationItem)}
 
-                                      <div className="formationImg">
+                                      <div style={{ backgroundImage: `url(/fil/${formationItem['2']})` }} className="formationImg">
 
                                       </div>
                                       <div  className="formationInfo">

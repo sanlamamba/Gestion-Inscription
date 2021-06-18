@@ -1,10 +1,16 @@
 @import "../base/reset";
+@import "../base/typography";
+
 
 /* AUTHENTICATE */
 .authenticate{
      display: flex;
-     justify-content: flex-end;
+     justify-content: space-evenly;
      height: max-content;
+     img{
+          align-self: flex-start;
+          height: 100%;
+     }
 
      .authenticate-form{
           height: max-content;
@@ -17,7 +23,8 @@
                display: grid;
                grid-template-rows: 100px 1fr 50px;
                height: 100%;
-
+               
+               
                .formSubmit, .formText{
                     text-align: center;
                     display: flex;
@@ -25,22 +32,19 @@
                     justify-content: center;
                     align-items: center;
                   
+                    h2{
+                         font-family:"AutourOne"
+                    }
                }
-
-               // .formInputs > *:not(input[type="checkbox"]){
-               //      width: 90%;
-               //      min-height: 50px;
-               //      margin: 10px;
-               //      padding: 10px;
-               //      border-radius: 20px;
-               //      border: none;
-                    
-               // }
                
                .formInputs{
                     display: flex;
                     flex-direction: column;
                     align-items: centercent;
+               
+                    #emailTxt{
+                         padding: 10px;
+                    }
                }
                   
           }

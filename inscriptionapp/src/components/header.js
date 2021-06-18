@@ -5,8 +5,8 @@ function Header(menuDisplay, ctaDisplay,links){
 	
 	return (
 		<header className = "header grided">
-			<div className="logo">
-
+			<div className="logoCont">
+				<img src='/img/logo.png' className='logo' />
 			</div>
 			<div className="menuZone">
 				

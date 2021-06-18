@@ -1,11 +1,15 @@
 /* Colors */
 /* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -15,15 +19,24 @@ a {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 /* Colors */
 /* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -132,12 +145,16 @@ input:not([type=checkbox]), .inputStyle {
 
 /* Colors */
 /* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -150,6 +167,16 @@ a {
 header {
   display: grid;
   grid-template-columns: 300px 1fr;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #90909015;
+}
+header .logoCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .logoCont > * {
+  width: 200px;
 }
 header .menuZone {
   display: flex;
@@ -171,12 +198,16 @@ header .menuZone ul li:hover {
 
 /* Colors */
 /* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -200,6 +231,33 @@ a {
   overflow: hidden;
 }
 
+/* Colors */
+/* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
+/* Fonts */
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+a {
+  color: inherit;
+  list-style: none;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
+/* Fonts */
 .home {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -208,8 +266,14 @@ a {
   width: 100%;
 }
 .home .homeText {
+  font-family: "AutourOne";
+  font-size: 10;
   max-width: 800px;
   margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .home .homeText h1 {
   font-size: 60px;
@@ -217,12 +281,16 @@ a {
 
 /* Colors */
 /* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -248,6 +316,9 @@ a {
   padding: 2px 10px;
 }
 .formationGrid .formationChild .formationImg {
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #647DEE;
 }
 .formationGrid .formationChild .formationDetails {
@@ -360,15 +431,27 @@ a {
   align-items: center;
   padding: 5px;
 }
+.contact .contactCont .socials .socialChild .socialIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact .contactCont .socials .socialChild .socialIcon img {
+  width: 70%;
+}
 
 /* Colors */
 /* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -378,11 +461,21 @@ a {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
+/* Fonts */
 /* AUTHENTICATE */
 .authenticate {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
   height: max-content;
+}
+.authenticate img {
+  align-self: flex-start;
+  height: 100%;
 }
 .authenticate .authenticate-form {
   height: max-content;
@@ -403,21 +496,31 @@ a {
   justify-content: center;
   align-items: center;
 }
+.authenticate .authenticate-form form .formSubmit h2, .authenticate .authenticate-form form .formText h2 {
+  font-family: "AutourOne";
+}
 .authenticate .authenticate-form form .formInputs {
   display: flex;
   flex-direction: column;
   align-items: centercent;
 }
+.authenticate .authenticate-form form .formInputs #emailTxt {
+  padding: 10px;
+}
 
 /* CONNECTION */
 /* Colors */
 /* Typography */
+@font-face {
+  font-family: "AutourOne";
+  src: local("AutourOne"), url("../font/AutourOne.ttf") format("truetype");
+  font-weight: regular;
+}
 /* Fonts */
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid black;
   transition: 0.3s;
 }
 

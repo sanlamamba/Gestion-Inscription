@@ -4,7 +4,18 @@
 header{
      display: grid;
      grid-template-columns: 300px 1fr;
+     padding-bottom: 5px;
+     border-bottom: 1px solid #90909015;
 
+     .logoCont{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &>*{
+               width: 200px;
+          }
+     }
      .menuZone{
           display: flex;
           justify-content: flex-end;

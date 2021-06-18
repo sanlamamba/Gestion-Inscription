@@ -58,7 +58,7 @@ class LoginPage extends Component{
      render(){
           return (
                <div className="page login authenticate">
-                    <div className="offset"></div>
+                    <img src ='/img/connection.png' className='imageCont'/>
                     <div className="authenticate-form">
                          <form>
                               <span className="formText">
@@ -168,7 +168,7 @@ class SignUppage extends Component{
           console.log(formationArr)
           return (
                <div className="page signup authenticate">
-                    <div className="offset"></div>
+                    <img src ='/img/inscription.png' className='imageCont'/>
                     <div className="authenticate-form">
                          <form id='signUpForm'>
                               <span className="formText">
@@ -179,8 +179,8 @@ class SignUppage extends Component{
                               </span>
                               <span className="formInputs signup">
                                    <input id="nomTxt" required type="text" placeholder="Nom et prenom"/>
-                                   <input id="emailTxt" required type="email" placeholder="email"/>
-                                        <input id="passwordTxt" required type="password" placeholder="saisir un mot de passe"/>
+                                   <input className='inputStyle' id="emailTxt" required type="email" placeholder="email"/>
+                                   <input id="passwordTxt" required type="password" placeholder="saisir un mot de passe"/>
                                    <span className="grided twoCol">
                                         <input id="dateTxt" required type="text" placeholder="date de naissance: jj-mm-aaaa"/>
                                         <select id='sexeTxt' required className="inputStyle">
@@ -216,7 +216,7 @@ class SignUppage extends Component{
      
                               </span>
                               <span className="formSubmit">
-                              <input onClick={this.signup} type="submit" value="connection" className="button primBtn" />
+                              <input onClick={this.signup} type="submit" value="inscription" className="button primBtn" />
      
                               </span>
                               
