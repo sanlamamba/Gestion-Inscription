@@ -13,10 +13,10 @@ La direction de SUP’INFO doit donc trouver une solution efficiente pour résou
 Mettre en place une application web qui puisse gérer les formulaires soumis et permettre aux personnels administratifs d'accepter ou de refuser facilement les étudiants en fonction de leurs choix.
 
 ## Fonctionalites
-*La page d’inscription présentera un formulaire d’inscription qui devra être rempli par les étudiants qui désirent suivre une formation à SUP’INFO. Lors de son inscription, l’étudiant doit pouvoir choisir sa filière et l’année désirée (Exemple: Informatique, Licence I)
-*La page de connexion permettra aux membres du service de scolarité de se connecter à la plateforme pour faire la gestion des inscriptions. Elle permettra aussi à chaque étudiant de suivre l’état de son inscription: en attente, acceptée, refusée, etc..
-*Une page FAQ en accordéon contiendra les questions fréquemment posées sur les différents cours, les conditions générales, etc.
-*La page d’accueil de l'application présentera l’institution  SUP’INFO
+###### La page d’inscription présentera un formulaire d’inscription qui devra être rempli par les étudiants qui désirent suivre une formation à SUP’INFO. Lors de son inscription, l’étudiant doit pouvoir choisir sa filière et l’année désirée (Exemple: Informatique, Licence I)
+###### La page de connexion permettra aux membres du service de scolarité de se connecter à la plateforme pour faire la gestion des inscriptions. Elle permettra aussi à chaque étudiant de suivre l’état de son inscription: en attente, acceptée, refusée, etc..
+###### Une page FAQ en accordéon contiendra les questions fréquemment posées sur les différents cours, les conditions générales, etc.
+###### La page d’accueil de l'application présentera l’institution  SUP’INFO
 
 ## Public visé
 Cette application est principalement destinée aux écoles, universités et instituts d'éducation qui reçoivent régulièrement des messages d'étudiants étrangers pour leur admission ou d'étudiants locaux qui veulent s'inscrire en ligne. l'application est rapide à déployer et à utiliser avec un site d'information contenant des informations.
